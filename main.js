@@ -11,3 +11,7 @@ function chooseBoardSize(size) {
 }
 
 chooseBoardSize(5); // lets us choose the boards size via argument
+
+function changeSize(input) {
+  chooseBoardSize(input);
+}

@@ -1,17 +1,32 @@
 function chooseBoardSize(size) {
   let board = document.querySelector(".board");
+  let squares = board.querySelectorAll("div");
+  squares.forEach((div) => div.remove());
+
   board.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
   board.style.gridTemplateRows = `repeat(${size}, 1fr)`;
 
-  for (let i = 0; i < 256; i++) {
+  let mount = size * size;
+  for (let i = 0; i < mount; i++) {
     let square = document.createElement("div");
-    square.style.backgroundColor = "red";
+    square.addEventListener("mouseover", colorSquare);
+    square.style.backgroundColor = "red"; // color of the board size
     board.insertAdjacentElement("beforeend", square);
   }
 }
 
 chooseBoardSize(5); // lets us choose the boards size via argument
 
+/* input parameter links to what the user types in on the html file */
 function changeSize(input) {
-  chooseBoardSize(input);
+  if (input >= 2 && input <= 100) {
+    // input between 2 and 100 is fine...
+    chooseBoardSize(input);
+  } else {
+    console.log("too many or too little squares"); // anything else is not!
+  }
+}
+
+function colorSquare() {
+  this.style.backgroundColor = "black";
 }

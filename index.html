@@ -11,7 +11,8 @@
         <div class="content">
             <div class="board"></div>
             <div class="buttons">
-                <button>Colour: Black</button>
+                <button onClick="changeColor('black')">Colour: Black</button>
+                <button onClick="changeColor('white')">Eraser: White</button>
             </div>
             <div>
                 <input type="text" placeholder="board size" value="16" onChange="changeSize(this.value)"/>

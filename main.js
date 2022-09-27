@@ -12,7 +12,7 @@ function chooseBoardSize(size) {
   for (let i = 0; i < mount; i++) {
     let square = document.createElement("div");
     square.addEventListener("mouseover", colorSquare);
-    square.style.backgroundColor = "red"; // color of the board size
+    square.style.backgroundColor = "white"; // color of the board size
     board.insertAdjacentElement("beforeend", square);
   }
 }
@@ -39,4 +39,12 @@ function colorSquare() {
 
 function changeColor(choice) {
   color = choice;
+}
+
+function resetBoard() {
+  let board = document.querySelector(".board");
+  let squares = board.querySelectorAll("div");
+  squares.forEach((div) => {
+    div.style.backgroundColor = "white";
+  });
 }

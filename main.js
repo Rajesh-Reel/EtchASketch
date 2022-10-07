@@ -23,9 +23,11 @@ chooseBoardSize(5); // lets us choose the boards size via argument
 function changeSize(input) {
   if (input >= 2 && input <= 100) {
     // input between 2 and 100 is fine...
+    document.querySelector(".error").style.display = "none";
     chooseBoardSize(input);
   } else {
-    console.log("too many or too little squares"); // anything else is not!
+    // console.log("too many or too little squares"); // anything else is not!
+    document.querySelector(".error").style.display = "flex";
   }
 }
 

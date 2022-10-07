@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<br lang="en">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,9 +7,11 @@
         <link rel="stylesheet" href="styles.css" >
         <title>Etch A Sketch</title>
     </head>
-    <body>
+    <body class="container">
         <div class="content">
+            <h1>Etch A Sketch</h1>
             <div class="board"></div>
+            <br></br>
             <div class="buttons">
                 <button onClick="changeColor('black')">Colour: Black</button>
                 <button onClick="changeColor('grey')">Colour: Grey</button>
@@ -18,8 +20,12 @@
                 <button onClick="resetBoard()">Reset Board</button>
             </div>
             <div>
-                <input type="text" placeholder="board size" value="16" onChange="changeSize(this.value)"/>
+                <!-- <input type="text" placeholder="board size" value="16" onChange="changeSize(this.value)"/> -->
+                <input type="text" placeholder="Enter board size here" onChange="changeSize(this.value)"/>
                 <button>Set Size</button>
+            </div>
+            <div class="error">
+                Input must be between 2 and 100
             </div>
         </div>
     </body>
